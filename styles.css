@@ -1,0 +1,646 @@
+/* ═══════════════════════════════════════════
+   THEME TOKENS
+   Each theme defines a gradient body background
+   and glass-morphism variables for panels.
+   ═══════════════════════════════════════════ */
+
+:root,
+[data-theme="warm"] {
+  --bg-a:         #f0dfd7;
+  --bg-b:         #e8d5cb;
+  --bg-c:         #dae7f5;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 50%, var(--bg-c) 100%);
+  --ink:          #28201a;
+  --muted:        rgba(40,32,26,0.54);
+  --glass-sm:     rgba(255,255,255,0.40);
+  --glass-md:     rgba(255,255,255,0.22);
+  --glass-bd:     rgba(255,255,255,0.58);
+  --shine:        rgba(255,255,255,0.84);
+  --glow-sm:      0 4px 18px rgba(40,20,10,0.09);
+  --glow-md:      0 14px 40px rgba(40,20,10,0.11);
+  --glow-lg:      0 24px 64px rgba(40,20,10,0.13);
+  --dot-off:      rgba(40,32,26,0.18);
+  --dot-on:       rgba(40,32,26,0.70);
+  --pill-ring:    #28201a;
+}
+
+[data-theme="noir"] {
+  --bg-a:         #0a0a0c;
+  --bg-b:         #0d0d12;
+  --bg-c:         #071716;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+  --ink:          #ede8e0;
+  --muted:        rgba(237,232,224,0.50);
+  --glass-sm:     rgba(255,255,255,0.08);
+  --glass-md:     rgba(255,255,255,0.05);
+  --glass-bd:     rgba(255,255,255,0.11);
+  --shine:        rgba(255,255,255,0.12);
+  --glow-sm:      0 4px 18px rgba(0,0,0,0.30);
+  --glow-md:      0 14px 40px rgba(0,0,0,0.40);
+  --glow-lg:      0 24px 64px rgba(0,0,0,0.50);
+  --dot-off:      rgba(237,232,224,0.18);
+  --dot-on:       rgba(237,232,224,0.78);
+  --pill-ring:    #ede8e0;
+}
+
+[data-theme="seafoam"] {
+  --bg-a:         #b2dfe0;
+  --bg-b:         #cde8e4;
+  --bg-c:         #d9cfbb;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+  --ink:          #18302c;
+  --muted:        rgba(24,48,44,0.56);
+  --glass-sm:     rgba(255,255,255,0.44);
+  --glass-md:     rgba(255,255,255,0.26);
+  --glass-bd:     rgba(255,255,255,0.62);
+  --shine:        rgba(255,255,255,0.88);
+  --glow-sm:      0 4px 18px rgba(18,44,40,0.09);
+  --glow-md:      0 14px 40px rgba(18,44,40,0.11);
+  --glow-lg:      0 24px 64px rgba(18,44,40,0.13);
+  --dot-off:      rgba(24,48,44,0.18);
+  --dot-on:       rgba(24,48,44,0.70);
+  --pill-ring:    #18302c;
+}
+
+[data-theme="desert"] {
+  --bg-a:         #f2dfc6;
+  --bg-b:         #e5d9c2;
+  --bg-c:         #c6dede;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+  --ink:          #2c1e08;
+  --muted:        rgba(44,30,8,0.56);
+  --glass-sm:     rgba(255,255,255,0.40);
+  --glass-md:     rgba(255,255,255,0.22);
+  --glass-bd:     rgba(255,255,255,0.56);
+  --shine:        rgba(255,255,255,0.80);
+  --glow-sm:      0 4px 18px rgba(44,30,8,0.08);
+  --glow-md:      0 14px 40px rgba(44,30,8,0.10);
+  --glow-lg:      0 24px 64px rgba(44,30,8,0.12);
+  --dot-off:      rgba(44,30,8,0.18);
+  --dot-on:       rgba(44,30,8,0.70);
+  --pill-ring:    #2c1e08;
+}
+
+[data-theme="savanna"] {
+  --bg-a:         #ead8ae;
+  --bg-b:         #ddd0b0;
+  --bg-c:         #b2dcd6;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+  --ink:          #241a06;
+  --muted:        rgba(36,26,6,0.56);
+  --glass-sm:     rgba(255,255,255,0.38);
+  --glass-md:     rgba(255,255,255,0.20);
+  --glass-bd:     rgba(255,255,255,0.54);
+  --shine:        rgba(255,255,255,0.78);
+  --glow-sm:      0 4px 18px rgba(36,26,6,0.08);
+  --glow-md:      0 14px 40px rgba(36,26,6,0.10);
+  --glow-lg:      0 24px 64px rgba(36,26,6,0.12);
+  --dot-off:      rgba(36,26,6,0.18);
+  --dot-on:       rgba(36,26,6,0.70);
+  --pill-ring:    #241a06;
+}
+
+[data-theme="sage"] {
+  --bg-a:         #bfcfac;
+  --bg-b:         #cdd8c4;
+  --bg-c:         #d5d3bc;
+  --bg-grad:      linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+  --ink:          #182416;
+  --muted:        rgba(24,36,22,0.56);
+  --glass-sm:     rgba(255,255,255,0.42);
+  --glass-md:     rgba(255,255,255,0.24);
+  --glass-bd:     rgba(255,255,255,0.60);
+  --shine:        rgba(255,255,255,0.84);
+  --glow-sm:      0 4px 18px rgba(24,36,22,0.08);
+  --glow-md:      0 14px 40px rgba(24,36,22,0.10);
+  --glow-lg:      0 24px 64px rgba(24,36,22,0.12);
+  --dot-off:      rgba(24,36,22,0.18);
+  --dot-on:       rgba(24,36,22,0.70);
+  --pill-ring:    #182416;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-grad);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  transition: color 0.35s ease;
+}
+
+button, a {
+  font: inherit;
+}
+
+/* ═══════════════════════════════════════════
+   SITE NAV
+   ═══════════════════════════════════════════ */
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 28px;
+  background: var(--glass-sm);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--glass-bd);
+  box-shadow: var(--glow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-mark {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  transition: color 0.35s ease;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 6px;
+}
+
+/* ── Hand-gesture guide (hover card) ── */
+
+.gesture-help {
+  position: relative;
+}
+
+.help-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-bd);
+  background: var(--glass-sm);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-sm), inset 0 1px 0 var(--shine);
+  transition:
+    transform  0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.help-icon:hover { transform: translateY(-2px); box-shadow: var(--glow-md); }
+
+.help-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 50;
+  width: 260px;
+  padding: 16px 18px;
+  background: var(--glass-md);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-bd);
+  border-radius: 16px;
+  box-shadow: var(--glow-md), inset 0 1px 0 var(--shine);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.gesture-help:hover .help-popover,
+.gesture-help:focus-within .help-popover {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.help-popover-title {
+  margin: 0 0 10px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  transition: color 0.35s ease;
+}
+
+.help-popover-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.help-popover-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.hp-emoji {
+  flex-shrink: 0;
+  width: 1.4em;
+}
+
+/* Pills split LEFT | RIGHT so both colours are always visible */
+.theme-pill {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 38px;
+  height: 26px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: var(--glow-sm);
+  transition:
+    border-color 0.2s ease,
+    transform    0.18s ease,
+    box-shadow   0.2s ease;
+}
+
+.theme-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-md);
+}
+
+.theme-pill.is-active {
+  border-color: var(--pill-ring);
+  box-shadow: var(--glow-md);
+}
+
+.pill-half {
+  flex: 1;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════ */
+
+.page-shell {
+  width: min(1280px, calc(100% - 26px));
+  margin: 0 auto;
+  padding: 24px 0 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+/* ═══════════════════════════════════════════
+   HERO PANEL  —  frosted glass card
+   ═══════════════════════════════════════════ */
+
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 32px;
+  background: var(--glass-md);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-bd);
+  border-radius: 28px;
+  min-height: 0;
+  box-shadow:
+    var(--glow-md),
+    inset 0 1px 0 var(--shine);
+  transition:
+    background-color 0.35s ease,
+    border-color     0.35s ease,
+    box-shadow       0.35s ease;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.35s ease;
+}
+
+.hero-name {
+  margin: 0 0 8px;
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+  margin: 0 0 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pill-ring);
+  opacity: 0.78;
+}
+
+.hero-bio {
+  margin: 0 0 28px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 34ch;
+  transition: color 0.35s ease;
+}
+
+.handles-label {
+  margin: 0 0 14px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.35s ease;
+}
+
+.social-icons-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-bd);
+  background: var(--glass-sm);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: var(--glow-sm), inset 0 1px 0 var(--shine);
+  transition:
+    transform  0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.icon-btn svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-md);
+}
+
+/* ═══════════════════════════════════════════
+   VIEWER PANEL  —  deep frosted glass
+   ═══════════════════════════════════════════ */
+
+.viewer-panel {
+  position: relative;
+  min-height: 0;
+  /* NO backdrop-filter here — it breaks WebGL compositing in Chrome */
+  background: transparent;
+  border: 1px solid var(--glass-bd);
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: var(--glow-lg);
+  transition:
+    border-color 0.35s ease,
+    box-shadow   0.35s ease;
+}
+
+.drag-hint {
+  position: absolute;
+  bottom: 22px;
+  right: 24px;
+  z-index: 3;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  pointer-events: none;
+  transition: color 0.35s ease;
+}
+
+#viewer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Let Three.js control canvas dimensions — no CSS override */
+#viewer canvas {
+  display: block;
+}
+
+/* 2D image view — sits above the 3D canvas, swapped in by the two-finger gesture */
+.viewer-image-2d {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--glass-sm);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.viewer-image-2d.is-active {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   GESTURE CONTROL UI
+   ═══════════════════════════════════════════ */
+
+.gesture-toggle {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  z-index: 6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-bd);
+  background: var(--glass-sm);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-sm), inset 0 1px 0 var(--shine);
+  transition:
+    background-color 0.2s ease,
+    transform        0.2s ease,
+    box-shadow       0.2s ease;
+}
+
+.gesture-toggle:hover { transform: scale(1.08); }
+
+.gesture-toggle.is-active {
+  background: rgba(80, 200, 120, 0.35);
+  border-color: rgba(80, 200, 120, 0.7);
+  box-shadow: 0 0 0 3px rgba(80, 200, 120, 0.18), var(--glow-sm);
+}
+
+/* Small mirrored webcam preview */
+.gesture-video {
+  position: absolute;
+  bottom: 66px;
+  left: 18px;
+  z-index: 6;
+  width: 130px;
+  height: 96px;
+  border-radius: 12px;
+  object-fit: cover;
+  transform: scaleX(-1);        /* mirror so it feels natural */
+  border: 1px solid var(--glass-bd);
+  box-shadow: var(--glow-md);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gesture-video.is-active {
+  display: block;
+  opacity: 1;
+}
+
+/* Hand-landmark skeleton overlay — sits directly on top of the webcam preview */
+.gesture-canvas {
+  position: absolute;
+  bottom: 66px;
+  left: 18px;
+  z-index: 7;
+  width: 130px;
+  height: 96px;
+  border-radius: 12px;
+  transform: scaleX(-1);        /* mirror to match the video underneath */
+  pointer-events: none;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gesture-canvas.is-active {
+  display: block;
+  opacity: 1;
+}
+
+/* Gesture name badge */
+.gesture-label {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  pointer-events: none;
+  min-height: 1em;
+  transition: color 0.35s ease;
+}
+
+/* ═══════════════════════════════════════════
+   RESET VIEW CONTROL
+   ═══════════════════════════════════════════ */
+
+.reset-toggle {
+  position: absolute;
+  bottom: 18px;
+  left: 66px;
+  z-index: 6;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-bd);
+  background: var(--glass-sm);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-sm), inset 0 1px 0 var(--shine);
+  transition:
+    background-color 0.2s ease,
+    transform        0.2s ease,
+    box-shadow       0.2s ease;
+}
+
+.reset-toggle:hover { transform: rotate(-40deg); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 980px) {
+  .page-shell {
+    flex: none;
+  }
+  .hero {
+    flex: none;
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .hero-panel,
+  .viewer-panel {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    width: calc(100% - 18px);
+  }
+  .site-nav {
+    padding: 14px 18px;
+  }
+}

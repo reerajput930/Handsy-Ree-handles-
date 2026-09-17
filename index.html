@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="warm">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ree — Portfolio</title>
+    <meta name="description" content="Ree — creative developer. 3D models & projects" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Tell the browser where to find "three" bare imports used by OrbitControls / GLTFLoader -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+
+    <!-- ── Top nav ──────────────────────────────────────── -->
+    <header class="site-nav" aria-label="Site navigation">
+      <div class="logo-mark">RE</div>
+
+      <div class="nav-right">
+        <div class="gesture-help" aria-label="Hand gesture guide">
+          <button class="help-icon" title="Hand gesture guide">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 4.5A2.5 2.5 0 0 1 4.5 2H11v18H4.5A2.5 2.5 0 0 0 2 22.5v-18z"/>
+              <path d="M22 4.5A2.5 2.5 0 0 0 19.5 2H13v18h6.5a2.5 2.5 0 0 1 2.5 2.5v-18z"/>
+            </svg>
+          </button>
+          <div class="help-popover">
+            <p class="help-popover-title">HAND GESTURE GUIDE</p>
+            <ul class="help-popover-list">
+              <li><span class="hp-emoji">✋</span>Open hand — zoom in</li>
+              <li><span class="hp-emoji">✊</span>Fist, thumb tucked — zoom out</li>
+              <li><span class="hp-emoji">👈</span>Fist, thumb out left — rotate left</li>
+              <li><span class="hp-emoji">👉</span>Fist, thumb out right — rotate right</li>
+              <li><span class="hp-emoji">👍</span>Fist, thumb up — camera up</li>
+              <li><span class="hp-emoji">👎</span>Fist, thumb down — camera down</li>
+              <li><span class="hp-emoji">✌️</span>Two fingers — show 2D image</li>
+              <li><span class="hp-emoji">🤟</span>Three fingers — show 3D model</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="theme-switcher" aria-label="Theme selector">
+        <button class="theme-pill is-active" data-theme="warm" title="Warm" aria-label="Warm theme">
+          <span class="pill-half" style="background:#e7d7cf"></span>
+          <span class="pill-half" style="background:#d6e1ec"></span>
+        </button>
+
+        <button class="theme-pill" data-theme="noir" title="Noir" aria-label="Noir theme">
+          <span class="pill-half" style="background:#0c0c0e"></span>
+          <span class="pill-half" style="background:#0d4b48"></span>
+        </button>
+
+        <button class="theme-pill" data-theme="seafoam" title="Seafoam" aria-label="Seafoam theme">
+          <span class="pill-half" style="background:#b7d8d2"></span>
+          <span class="pill-half" style="background:#d7cbb0"></span>
+        </button>
+
+        <button class="theme-pill" data-theme="desert" title="Desert" aria-label="Desert theme">
+          <span class="pill-half" style="background:#d5b98d"></span>
+          <span class="pill-half" style="background:#d7e5e0"></span>
+        </button>
+
+        <button class="theme-pill" data-theme="savanna" title="Savanna" aria-label="Savanna theme">
+          <span class="pill-half" style="background:#d7c19c"></span>
+          <span class="pill-half" style="background:#b9dfd5"></span>
+        </button>
+
+        <button class="theme-pill" data-theme="sage" title="Sage" aria-label="Sage theme">
+          <span class="pill-half" style="background:#b9d3ae"></span>
+          <span class="pill-half" style="background:#d9d9c8"></span>
+        </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-shell">
+      <section class="hero" aria-label="Portfolio hero section">
+
+        <!-- ── Left panel — hero copy ──────────────────── -->
+        <aside class="hero-panel" aria-label="Introduction">
+          <p class="eyebrow">HELLO, I'M</p>
+          <h1 class="hero-name">REE</h1>
+          <p class="hero-tagline">CREATIVE DEVELOPER</p>
+          <p class="hero-bio">I design interactive 3D experiences and build playful, hands-on web interfaces.</p>
+
+          <p class="handles-label">MY HANDLES</p>
+
+          <div class="social-icons-row" aria-label="Social links">
+            <a href="https://github.com/reerajput930" target="_blank" rel="noopener noreferrer" class="icon-btn" title="GitHub" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/riya-23400a200/" target="_blank" rel="noopener noreferrer" class="icon-btn" title="LinkedIn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/code_with_ree/" target="_blank" rel="noopener noreferrer" class="icon-btn" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.youtube.com/@codewithree930" target="_blank" rel="noopener noreferrer" class="icon-btn" title="YouTube" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="4"/>
+                <polygon points="10 9 16 12 10 15 10 9"/>
+              </svg>
+              <span>YouTube</span>
+            </a>
+            <a href="mailto:rajputriya930@gmail.com" class="icon-btn" title="Email" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </aside>
+
+        <!-- ── 3-D viewer ──────────────────────────────── -->
+        <div class="viewer-panel">
+          <div id="viewer" aria-label="3D model viewer"></div>
+          <img id="viewerImage2D" class="viewer-image-2d" src="./3d_model/2d.png" alt="2D project view" />
+
+          <!-- Gesture control UI -->
+          <button class="gesture-toggle" id="gestureToggle" title="Toggle hand gesture control">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </button>
+          <video id="gestureVideo" class="gesture-video" autoplay muted playsinline></video>
+          <canvas id="gestureCanvas" class="gesture-canvas"></canvas>
+          <div id="gestureLabel" class="gesture-label">TRY HAND CONTROL</div>
+
+          <!-- Reset camera / model view -->
+          <button class="reset-toggle" id="resetView" title="Reset view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="1 4 1 10 7 10"/>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+            </svg>
+          </button>
+
+          <div class="drag-hint">DRAG TO EXPLORE</div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
