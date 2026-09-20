@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 /* ── Theme → scene background ──────────────────────────── */
 
@@ -100,7 +101,11 @@ const floatingSpheres = PROP_CONFIGS.map(({ pos, radius, phase }) => {
   return { mesh, baseY: pos[1], phase };
 });
 
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+
 const propLoader = new GLTFLoader();
+propLoader.setDRACOLoader(dracoLoader);
 PROP_CONFIGS.forEach((config, i) => {
   propLoader.load(
     config.url,
@@ -139,6 +144,7 @@ PROP_CONFIGS.forEach((config, i) => {
 /* ── Load first.glb ────────────────────────────────────── */
 
 const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
 let currentModel = null;
 
 function disposeModel(model) {
@@ -167,7 +173,7 @@ async function loadFirstModel() {
       new Promise((resolve, reject) => {
         loader.load('./3d_model/first.glb', (gltf) => resolve(gltf.scene), undefined, reject);
       }),
-      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 8000)),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 15000)),
     ]);
 
     if (currentModel) { scene.remove(currentModel); disposeModel(currentModel); }
